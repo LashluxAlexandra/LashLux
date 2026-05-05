@@ -235,7 +235,15 @@
       <b>Alexis A</b>
       <p>„Rezultatul este mult peste ce îmi imaginam. Se vede profesionalismul.”</p>
     </div>
+<div class="review-item" style="margin-top:25px;">
+  <b>Lasă o recenzie 🤍</b>
 
+  <input type="text" id="name" placeholder="Numele tău">
+  <textarea id="text" rows="3" placeholder="Scrie experiența ta..."></textarea>
+  <button class="btn-review" onclick="addRev()">Postează</button>
+
+  <div id="rev-list"></div>
+</div>
   </div>
 </section>
 
@@ -249,6 +257,21 @@ function loadFile(event) {
   document.getElementById('output').src = URL.createObjectURL(event.target.files[0]);
 }
 </script>
+<script>
+function addRev() {
+  let n = document.getElementById('name').value;
+  let t = document.getElementById('text').value;
 
+  if(n && t){
+    let d = document.createElement('div');
+    d.className = 'review-item';
+    d.innerHTML = `<b>${n}</b><p>${t}</p>`;
+    document.getElementById('rev-list').prepend(d);
+
+    document.getElementById('name').value = '';
+    document.getElementById('text').value = '';
+  }
+}
+</script>
 </body>
 </html>
