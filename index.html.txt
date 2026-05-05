@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lash Lux | Alexandra Gheorghiță</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --pale-pink: #fdf2f5;
+      --gold: #d4af37;
+      --soft-gold: #f4e4bc;
+      --dark-pink: #b56c89;
+      --text-color: #3d2b32;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+    body { background: var(--pale-pink); color: var(--text-color); line-height: 1.6; }
+
+    header {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .profile-container { position: relative; margin-bottom: 20px; }
+
+    .profile-photo {
+      width: 180px; height: 180px;
+      border-radius: 50%; border: 5px solid white;
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+      object-fit: cover;
+    }
+
+    .upload-label {
+      position: absolute; bottom: 5px; right: 5px;
+      background: var(--gold); color: white;
+      padding: 10px; border-radius: 50%;
+      cursor: pointer; border: 2px solid white;
+    }
+
+    .hero-box {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 25px;
+      border-radius: 25px;
+      border: 1px solid var(--gold);
+    }
+
+    .hero-box h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-btn {
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+    }
+
+    .insta { background: #E1306C; }
+    .face { background: #1877F2; }
+    .phone { background: #25D366; }
+
+    section { max-width: 900px; margin: auto; padding: 40px 20px; }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--dark-pink);
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 25px;
+      border-radius: 25px;
+      border: 1px solid #f0dee4;
+    }
+
+    .price-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid #f9ebf0;
+    }
+
+    .price-item b { color: var(--gold); }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #eee;
+      margin-bottom: 10px;
+    }
+
+    .btn-review {
+      background: var(--dark-pink);
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 12px;
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .review-item {
+      background: #fffafb;
+      padding: 15px;
+      border-radius: 15px;
+      margin-top: 10px;
+      border-left: 4px solid var(--gold);
+    }
+
+    footer {
+      background: white;
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #f4e4bc;
+    }
+
+    #file-input { display: none; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="profile-container">
+    <img id="output" src="https://via.placeholder.com/200" class="profile-photo">
+    <label for="file-input" class="upload-label">📸</label>
+    <input type="file" id="file-input" accept="image/*" onchange="loadFile(event)">
+  </div>
+
+  <div class="hero-box">
+    <h1>Lash Lux</h1>
+    <p>Alexandra Gheorghiță</p>
+
+    <div class="contact-buttons">
+      <a href="tel:0720842171" class="social-btn phone">Sună</a>
+      <a href="#" class="social-btn insta">Instagram</a>
+      <a href="#" class="social-btn face">Facebook</a>
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2>Servicii & Tarife</h2>
+  <div class="card">
+
+    <div class="price-item"><span>Soft Volume</span><b>210 RON</b></div>
+    <div class="price-item"><span>Russian Volume</span><b>230 RON</b></div>
+    <div class="price-item"><span>Mega Volume</span><b>250 RON</b></div>
+    <div class="price-item"><span>Curburi M/L</span><b>+30 RON</b></div>
+
+  </div>
+</section>
+
+<section>
+  <h2>Portofoliu</h2>
+  <div class="card gallery">
+    <img src="lucrare1.jpg">
+    <img src="lucrare1.jpg">
+    <img src="lucrare1.jpg">
+    <img src="lucrare1.jpg">
+  </div>
+</section>
+
+<section>
+  <h2>Locație</h2>
+  <div class="card" style="text-align:center;">
+    <p>📍 Tomis Nord, Constanța</p>
+  </div>
+</section>
+
+<section>
+  <h2>Ce spun clientele mele</h2>
+
+  <div class="card">
+
+    <div class="review-item">
+      <b>Maria B</b>
+      <p>„Am încercat mai multe saloane, dar aici genele chiar rezistă. După aproape 4 săptămâni încă arată foarte bine.”</p>
+    </div>
+
+    <div class="review-item">
+      <b>Cristina G</b>
+      <p>„Atmosfera este foarte plăcută, m-am relaxat complet. Totul este curat și profesional.”</p>
+    </div>
+
+    <div class="review-item">
+      <b>Elena S</b>
+      <p>„Servicii excelente, recomand cu încredere ♥️”</p>
+    </div>
+
+    <div class="review-item">
+      <b>Alexis A</b>
+      <p>„Rezultatul este mult peste ce îmi imaginam. Se vede profesionalismul.”</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p><b>Lash Lux Alexandra Gheorghiță</b></p>
+  <p>0720 842 171</p>
+</footer>
+
+<script>
+function loadFile(event) {
+  document.getElementById('output').src = URL.createObjectURL(event.target.files[0]);
+}
+</script>
+
+</body>
+</html>
